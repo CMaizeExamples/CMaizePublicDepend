@@ -5,7 +5,7 @@
 # parent project's configure step (namely we do not want to build CMakePP's
 # unit tests).
 #]]
-function(get_cpp)
+function(get_cmaize)
 
     # Store whether we are building tests or not, then turn off the tests
     set(build_testing_old "${BUILD_TESTING}")
@@ -26,5 +26,6 @@ endfunction()
 # Call the function we just wrote to get CMakePP
 get_cmaize()
 
-# Include CMakePP
+# Include CMaize
+include(cpp/cpp)
 include(cmaize/cmaize)
