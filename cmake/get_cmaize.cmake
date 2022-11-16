@@ -14,8 +14,8 @@ function(get_cmaize)
     # Download CMakePP and bring it into scope
     include(FetchContent)
     FetchContent_Declare(
-         cmaize
-         GIT_REPOSITORY https://github.com/CMakePP/CMakePackagingProject
+        cmaize
+        GIT_REPOSITORY https://github.com/CMakePP/CMakePackagingProject
     )
     FetchContent_MakeAvailable(cmaize)
 
