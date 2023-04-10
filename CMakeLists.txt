@@ -10,19 +10,27 @@ set(
 include(get_cmaize)
 
 # Get dependencies
-cpp_find_or_build_dependency(
+# This works whether building or finding an installed version of CMakePublic
+cmaize_find_or_build_dependency(
     CMakePublic
     URL github.com/CMaizeExamples/CMakePublic
-    BUILD_TARGET CMakePublic
-    FIND_TARGET CMakePublic::CMakePublic
+    BUILD_TARGET world
+    FIND_TARGET CMakePublic::world
+    CMAKE_ARGS BUILD_TESTING=FALSE
 )
+
+# Works fine
+# find_package(CMakePublic REQUIRED COMPONENTS hello world CONFIG)
+
+# Also works fine
+# find_package(CMakePublic CONFIG)
 
 # Build the library
 cmaize_add_library(
     ${PROJECT_NAME}
     INCLUDE_DIRS "${CMAKE_CURRENT_LIST_DIR}/include/cmaize_public_depend"
     SOURCE_DIR "${CMAKE_CURRENT_LIST_DIR}/src/cmaize_public_depend"
-    DEPENDS CMakePublic::CMakePublic
+    DEPENDS CMakePublic
 )
 
 if (BUILD_TESTING)
