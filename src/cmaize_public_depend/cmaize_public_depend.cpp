@@ -1,5 +1,9 @@
 #include "cmaize_public_depend/cmaize_public_depend.hpp"
 
+namespace cmaize_public_depend {
+
 int call_cmaize_public_depend() {
-    return call_cmake_public() + 2;
+    return cmake_public::call_world() + 2;
 }
+
+} // namespace cmaize_public_depend
