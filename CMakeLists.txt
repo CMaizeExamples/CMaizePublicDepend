@@ -40,7 +40,7 @@ if (BUILD_TESTING)
         URL github.com/catchorg/Catch2
         BUILD_TARGET Catch2
         FIND_TARGET Catch2::Catch2WithMain
-        VERSION v3.0.1
+        VERSION v3.4.0
     )
 
     cmaize_add_tests(
