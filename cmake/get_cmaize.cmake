@@ -27,5 +27,4 @@ endfunction()
 get_cmaize()
 
 # Include CMaize
-include(cpp/cpp)
 include(cmaize/cmaize)
